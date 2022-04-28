@@ -1,0 +1,25 @@
+---
+ - name: setup for apache2
+   hosts: all
+   become: yes
+   
+   tasks:
+   - name: download apache2
+     apt:
+       name: apache2
+       state: present
+   - name: starting apache2
+     service:
+       name: apache2
+       state: started
+       enbled: yes
+   - name: download git
+     apt:
+       name: git
+       state: present
+   - name: git clonning
+     git:
+       repo:
+       dest: /var/www/html
+...
+
