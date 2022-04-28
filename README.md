@@ -1,2 +1,0 @@
-# Ansible-test
-ansible testing
